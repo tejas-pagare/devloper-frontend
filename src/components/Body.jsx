@@ -18,11 +18,9 @@ function Body() {
       dispatch(addUser(response.data.user));
 
     } catch (error) {
-      if(error.status===401){
+     
         navigate("/login");
-        return ;
-      }
-      console.error(error.message);
+      
     }
   }
   useEffect(()=>{
