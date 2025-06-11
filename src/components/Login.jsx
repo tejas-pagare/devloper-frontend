@@ -15,10 +15,7 @@ function Login() {
     setError,
     formState: { errors },
   } = useForm({
-    defaultValues: {
-      emailId: "Virat@gmail.com",
-      password: "Kholi@123",
-    },
+    defaultValues: {},
   });
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -41,10 +38,10 @@ function Login() {
       console.log(response);
       dispatch(addUser(response.data.user));
       reset();
-      toast.success(response.data.message)
+      toast.success(response.data.message);
       navigate("/feed");
     } catch (error) {
-      toast.error(error?.response?.data?.message||"Something went wrong");
+      toast.error(error?.response?.data?.message || "Something went wrong");
     }
   };
   return (
@@ -63,7 +60,9 @@ function Login() {
                 placeholder="Type here"
               />
               {errors.emailId && (
-                <p className="label text-red-500 tracking-tighter">{errors.emailId.message}</p>
+                <p className="label text-red-500 tracking-tighter">
+                  {errors.emailId.message}
+                </p>
               )}
             </fieldset>
             <fieldset className="fieldset">
@@ -87,7 +86,12 @@ function Login() {
               </button>
             </div>
           </form>
-          <p>Don't have an account? <span className="text-blue-600"><Link to={'/signup'}>Signup</Link></span></p>
+          <p>
+            Don't have an account?{" "}
+            <span className="text-blue-600">
+              <Link to={"/signup"}>Signup</Link>
+            </span>
+          </p>
         </div>
       </div>
     </div>
