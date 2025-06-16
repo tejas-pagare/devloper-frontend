@@ -14,9 +14,9 @@ function UserCard({ user ,onClickHandler}) {
           {age && gender && <h4>{age + "," + gender}</h4>}
           <p>{bio}</p>
           <div className="card-actions justify-evenly mt-4">
-            <button onClick={()=>onClickHandler("ignored",_id)} className="btn btn-primary ">Ignore</button>
+            <button onClick={()=>onClickHandler("ignored",_id)} className="btn btn-active btn-primary ">Ignore</button>
             
-            <button onClick={()=>onClickHandler("interested",_id)} className="btn btn-secondary">Interested</button>
+            <button onClick={()=>onClickHandler("interested",_id)} className="btn btn-active  btn-secondary">Interested</button>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { BACKEND_BASE_URL } from "../utils/constant";
 import { removeUser } from "../store/slices/user";
 import toast from "react-hot-toast";
+import ThemeToggle from "./ToogleTheme";
 
 function Navbar() {
   const user = useSelector((store)=>store.user);
@@ -26,11 +27,14 @@ function Navbar() {
     <>
       <div className="navbar bg-base-200 shadow-lg px-6">
         <div className="flex-1">
-          <Link to={'/feed'} className="btn btn-ghost text-xl">🧑‍🤝‍🧑DevMatch</Link>
+          <Link to={'/feed'} className="font-bold text-purple-700 text-xl">🧑‍🤝‍🧑DevMatch</Link>
         </div>
         {
           user && <div className="flex gap-2 ">
-          <h1 className="flex item-center text-purple-600 font-bold">Welcome,{user.firstname}</h1>
+          <h1 className="flex items-center justify-center text-center text-purple-600 font-bold"><div>
+            Welcome,{user.firstname}
+            </div></h1>
+         <ThemeToggle/>
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}

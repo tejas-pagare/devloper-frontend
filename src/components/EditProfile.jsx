@@ -87,8 +87,8 @@ function EditProfile({ user }) {
     }
   };
   return (
-    <div className="flex gap-6 justify-center m-6">
-      <div className="flex item-center justify-center">
+    <div className="flex gap-6 justify-center m-6 flex-col lg:flex-row">
+      <div className="flex item-center justify-center ">
         <div className="card card-border bg-base-300 w-96">
           <div className="card-body">
             <h2 className="card-title">Edit Profile</h2>
@@ -183,7 +183,7 @@ function EditProfile({ user }) {
                 )}
               </fieldset>
               <div className="flex item-center justify-center mt-2">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-active btn-primary ">
                   Save Profile
                 </button>
               </div>
