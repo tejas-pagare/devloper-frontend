@@ -7,6 +7,8 @@ import Profile from "./components/Profile";
 import Connections from "./components/Connections";
 import Requests from "./components/Requests";
 import Signup from "./components/Signup";
+import Membership from "./components/Membership";
+import PurchaseSuccess from "./components/SuccessPurchase";
 
 function App() {
   return (
@@ -15,11 +17,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Body />}>
             <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup/>} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/feed" element={<Feed />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/connections" element={<Connections />} />
             <Route path="/requests" element={<Requests />} />
+            <Route path="/membership" element={<Membership />} />
+              <Route path="/purchase/success" element={<PurchaseSuccess />} />
           </Route>
         </Routes>
       </BrowserRouter>

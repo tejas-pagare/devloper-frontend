@@ -18,8 +18,10 @@ function ThemeToggle() {
   return (
     <>
       <div className="dropdown dropdown-hover">
-        <div tabIndex={0} role="button btn-soft" className="btn m-1">
-          Hover
+        <div tabIndex={0} role="button" className="btn btn-soft m-1 rounded-full ">
+          {theme==="light"&& <span>🌙</span>}
+          {theme==="dark"&& <span>☀️</span>}
+          
         </div>
         <ul
           tabIndex={0}
