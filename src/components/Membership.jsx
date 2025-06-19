@@ -63,19 +63,18 @@ export default function Membership() {
       });
       if (response?.data?.isPremium) {
         navigate("/purchase/success");
-      }else{
+      } else {
         navigate("/membership");
       }
     } catch (error) {
       toast.error(error?.response?.data?.message || "Something went wrong");
     }
-
-    const onClickHandler = async (membershiptype) => {
-      if (membershiptype === "normal") {
-        toast.success("Already a user basic user");
-        return;
-      }
-    };
+  };
+  const onClickHandler = async (membershiptype) => {
+    if (membershiptype === "normal") {
+      toast.success("Already a user basic user");
+      return;
+    }
     try {
       const response = await axios.post(
         BACKEND_BASE_URL + "/payment/create",
